@@ -1,4 +1,5 @@
 class ApartmentsController < ApplicationController
+
   before_action :set_apartment, only: %i[ show edit update destroy ]
 
   # GET /apartments or /apartments.json
@@ -13,10 +14,12 @@ class ApartmentsController < ApplicationController
   # GET /apartments/new
   def new
     @apartment = Apartment.new
+    @buildings = Building.select(:id, :name)
   end
 
   # GET /apartments/1/edit
   def edit
+    @buildings = Building.select(:id, :name)
   end
 
   # POST /apartments or /apartments.json
