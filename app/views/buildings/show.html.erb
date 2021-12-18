@@ -1,5 +1,13 @@
 <p id="notice"><%= notice %></p>
 
+<h3>Building</h3>
+
+<div class="card">
+    <div class="card-body">
+       
+        <% if flash[:set_product_error] %>
+         <%= flash[:set_product_error] %>
+    <% end %>
 <p>
   <strong>Name:</strong>
   <%= @building.name %>

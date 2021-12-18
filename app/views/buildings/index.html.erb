@@ -1,8 +1,15 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Buildings</h1>
+<h3>Buildings</h3>
 
-<table>
+<div class="card">
+    <div class="card-body">
+       
+        <% if flash[:set_product_error] %>
+         <%= flash[:set_product_error] %>
+    <% end %>
+
+<table class='table table-hover'>
   <thead>
     <tr>
       <th>Name</th>
@@ -18,9 +25,9 @@
         <td><%= building.name %></td>
         <td><%= building.address %></td>
         <td><%= building.city %></td>
-        <td><%= link_to 'Show', building %></td>
-        <td><%= link_to 'Edit', edit_building_path(building) %></td>
-        <td><%= link_to 'Destroy', building, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', building, class: 'btn btn-success' %></td>
+        <td><%= link_to 'Edit', edit_building_path(building), class: 'btn btn-success' %></td>
+        <td><%= link_to 'Destroy', building, class: 'btn btn-success', method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +35,5 @@
 
 <br>
 
-<%= link_to 'New Building', new_building_path %>
+<%= link_to 'New Building', new_building_path, class: 'btn btn-primary' %>
+

@@ -1,4 +1,11 @@
-<h1>New Apartment</h1>
+<h3>New Apartment</h3>
+
+<div class="card">
+    <div class="card-body">
+       
+        <% if flash[:set_product_error] %>
+         <%= flash[:set_product_error] %>
+    <% end %>
 
 <%= render 'form', apartment: @apartment, p_buildings: @buildings %>
 
